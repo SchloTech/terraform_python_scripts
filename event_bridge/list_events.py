@@ -5,6 +5,8 @@ events_client = client('events')
 rule_paginator = events_client.get_paginator('list_rules')
 rule_response_iterator = rule_paginator.paginate()
 target_paginator = events_client.get_paginator('list_targets_by_rule')
+
+# setting orignial stdout to original
 original_stdout = sys.stdout
 
 with open('./event_bridge.tf', 'w') as f:
